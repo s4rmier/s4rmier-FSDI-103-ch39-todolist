@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task Lemon.App</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="shortcut icon" href="logo.png" type="image/x-icon" />
+    <script src="https://kit.fontawesome.com/c7dcac8717.js" crossorigin="anonymous"></script>
+  </head>
+  <body class="flex-col align justify">
+    <div class="container flex-col main-bg">
+      <header class="flex-row align">
+        <div class="brand flex-row align">
+          <img src="logo.png" alt="" />
+          <h1>Task Lemon.App</h2>
+        </div>
+        <button id="add-task" class="flex-row align">
+          <i class="fa-solid fa-thumbtack"></i>
+          <h3>Create Task</h3>
+        </button>
+      </header>
+      <hr>
+      <main class="flex-col align">
+        
+        <ul class="task-list flex-col">
+          <li class="task-item card-bg flex-col justify">
+            <div class="task-title flex-row align">
+              <h3>Task: <span>Task Title</span></h3>
+              <h4>Created: <span class="created-date">Jun 22, 2023</span></h4>
+            </div>
+              <p class="task-description">Task Description: This is where the extra notes are!</p>
+            <button class="mark-complete flex-row align">
+              <i class="fa-solid fa-check"></i>
+              <h3>Mark Complete</h3>
+            </button>
+          </li>
+         
+        </ul>
+
+      </main>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

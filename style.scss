@@ -1,0 +1,207 @@
+@import url("https://fonts.googleapis.com/css2?family=Belanosima:wght@400;600;700&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Manrope:wght@200;300;400;500;600;700;800&display=swap");
+
+:root {
+  --font-title: "Manrope";
+  --font-subtitle: "Kanit";
+  --font-body: "Lora";
+  --font-branding: "Belanosima";
+
+  /* Color Pallete */
+  --color-dark: #2e4d37;
+  --color-light: #fffcf7;
+  --color-mid: #a1b5d8;
+  --color-utility-light: #e4f0d0;
+  --color-utility-dark: #c2d8b9;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  box-sizing: border-box;
+  transition: all 100ms ease-in;
+  list-style-type: none;
+
+  .flex-row {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .flex-col {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .align {
+    align-items: center;
+  }
+
+  .justify {
+    justify-content: center;
+  }
+
+  .main-bg {
+    background-image: linear-gradient(
+      45deg,
+      hsl(82deg 52% 88%) 0%,
+      hsl(80deg 51% 88%) 2%,
+      hsl(77deg 51% 89%) 4%,
+      hsl(74deg 51% 89%) 7%,
+      hsl(72deg 51% 89%) 10%,
+      hsl(69deg 50% 90%) 13%,
+      hsl(66deg 50% 90%) 16%,
+      hsl(64deg 50% 91%) 20%,
+      hsl(61deg 49% 91%) 24%,
+      hsl(58deg 51% 92%) 28%,
+      hsl(56deg 54% 92%) 32%,
+      hsl(54deg 57% 93%) 37%,
+      hsl(52deg 60% 93%) 41%,
+      hsl(50deg 64% 94%) 46%,
+      hsl(48deg 67% 95%) 51%,
+      hsl(46deg 70% 95%) 56%,
+      hsl(45deg 74% 96%) 62%,
+      hsl(43deg 78% 96%) 67%,
+      hsl(42deg 83% 97%) 74%,
+      hsl(40deg 87% 97%) 80%,
+      hsl(39deg 93% 98%) 88%,
+      hsl(38deg 100% 98%) 100%
+    );
+  }
+
+  .card-bg {
+    backdrop-filter: blur(20px);
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    background-image: linear-gradient(
+      45deg,
+      hsl(218deg 41% 74%) 0%,
+      hsl(214deg 44% 73%) 2%,
+      hsl(210deg 46% 73%) 4%,
+      hsl(206deg 48% 72%) 7%,
+      hsl(203deg 48% 72%) 10%,
+      hsl(200deg 49% 71%) 13%,
+      hsl(197deg 48% 71%) 16%,
+      hsl(195deg 47% 71%) 20%,
+      hsl(192deg 45% 70%) 24%,
+      hsl(189deg 43% 70%) 28%,
+      hsl(185deg 41% 70%) 32%,
+      hsl(182deg 38% 70%) 37%,
+      hsl(177deg 37% 70%) 41%,
+      hsl(173deg 37% 71%) 46%,
+      hsl(168deg 36% 72%) 51%,
+      hsl(163deg 36% 73%) 56%,
+      hsl(157deg 34% 74%) 62%,
+      hsl(149deg 33% 76%) 67%,
+      hsl(141deg 31% 77%) 74%,
+      hsl(130deg 28% 78%) 80%,
+      hsl(116deg 27% 79%) 88%,
+      hsl(103deg 28% 79%) 100%
+    );
+  }
+
+  button:hover {
+    filter: drop-shadow(4px 4px 0px var(--color-dark));
+    transform: translate(-2px, -2px);
+  }
+}
+
+body {
+  padding: 6rem;
+  div.container {
+    filter: drop-shadow(4px 4px 8px var(--color-dark));
+    width: 50%;
+    min-height: 80svh;
+    padding: 2rem;
+    header {
+      height: 3rem;
+      justify-content: space-between;
+      div.brand {
+        img {
+          width: 40px;
+          object-fit: cover;
+          margin: 20px;
+        }
+        h1 {
+          font-family: var(--font-branding);
+          font-size: 1.25rem;
+          font-weight: 400;
+          color: var(--color-dark);
+        }
+      }
+      button#add-task {
+        border: none;
+        background-color: var(--color-utility-light);
+        i {
+          font-size: 1.25rem;
+          padding: 0.5rem 1rem;
+          background-color: var(--color-utility-dark);
+          color: var(--color-dark);
+        }
+        h3 {
+          margin: 0.5rem;
+          font-size: 1rem;
+          font-family: var(--font-branding);
+          font-weight: 500;
+          color: var(--color-dark);
+          text-transform: uppercase;
+          letter-spacing: 0.075rem;
+        }
+      }
+    }
+    hr {
+      width: 80%;
+      margin: 1.5rem auto;
+      background-color: var(--color-dark);
+      height: 0.125rem;
+    }
+    main {
+      width: 100%;
+      ul.task-list {
+        width: 100%;
+        li.task-item {
+          width: 80%;
+          margin: 0 auto;
+          padding: 0.75rem 1.5rem;
+          div.task-title {
+            justify-content: space-between;
+            h3 {
+              margin: 0.825rem 0rem;
+              font-family: var(--font-branding);
+              font-weight: 400;
+              align-self: flex-start;
+            }
+            h4 {
+              font-family: var(--font-branding);
+              font-weight: 400;
+              opacity: 0.25;
+            }
+          }
+          p {
+            font-family: var(--font-body);
+          }
+          button.mark-complete {
+            margin: 1rem 0rem;
+            align-self: flex-end;
+            border: none;
+            background-color: var(--color-utility-light);
+            i {
+              font-size: 1rem;
+              padding: 0.35rem 0.75rem;
+              background-color: var(--color-utility-dark);
+              color: var(--color-dark);
+            }
+            h3 {
+              margin: 0.35rem;
+              font-size: 0.75rem;
+              font-family: var(--font-branding);
+              font-weight: 400;
+              color: var(--color-dark);
+              text-transform: uppercase;
+              letter-spacing: 0.05rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}
