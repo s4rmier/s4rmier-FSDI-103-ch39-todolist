@@ -20,13 +20,36 @@
           <h3>Create Task</h3>
         </button>
       </header>
+
       <hr>
+
+      <div id="popup-modal" class="hidden flex-col align justify">
+        <div id="modal-backdrop"></div>
+        <form action="#" class="main-bg flex-col">
+          <i id="modal-close-button" class="fa-solid fa-xmark"></i>
+          <h2>Create a new task</h2>
+          <label for="">Task Title</label>
+          <input type="text" name="" id="modal-task-title" placeholder="Enter task title">
+          <label for="">Task Description</label>
+          <textarea name="" id="modal-task-description" cols="30" rows="4" placeholder="Enter task description"></textarea>
+          <div class="modal-button-container flex-row align">
+            <h4>Created: <span id="modal-created-date">June 22, 2023</span></h4>
+            <button id="modal-task-submit" class="mark-complete flex-row align">
+              <i class="fa-solid fa-check"></i>
+              <h3>Submit Task</h3>
+            </button>
+         </div>
+          
+        </form>
+      </div>
+
       <main class="flex-col align">
-        
+         
         <ul class="task-list flex-col">
+
           <li class="task-item card-bg flex-col justify">
             <div class="task-title flex-row align">
-              <h3>Task: <span>Task Title</span></h3>
+              <h3>Task Title: <span>Title</span></h3>
               <h4>Created: <span class="created-date">Jun 22, 2023</span></h4>
             </div>
               <p class="task-description">Task Description: This is where the extra notes are!</p>
@@ -34,8 +57,7 @@
               <i class="fa-solid fa-check"></i>
               <h3>Mark Complete</h3>
             </button>
-          </li>
-         
+          </li>                
         </ul>
 
       </main>

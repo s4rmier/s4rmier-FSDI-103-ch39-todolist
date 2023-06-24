@@ -73,44 +73,60 @@
     border-radius: 10px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
     background-image: linear-gradient(
-      45deg,
-      hsl(218deg 41% 74%) 0%,
-      hsl(214deg 44% 73%) 2%,
-      hsl(210deg 46% 73%) 4%,
-      hsl(206deg 48% 72%) 7%,
-      hsl(203deg 48% 72%) 10%,
-      hsl(200deg 49% 71%) 13%,
-      hsl(197deg 48% 71%) 16%,
-      hsl(195deg 47% 71%) 20%,
-      hsl(192deg 45% 70%) 24%,
-      hsl(189deg 43% 70%) 28%,
-      hsl(185deg 41% 70%) 32%,
-      hsl(182deg 38% 70%) 37%,
-      hsl(177deg 37% 70%) 41%,
-      hsl(173deg 37% 71%) 46%,
-      hsl(168deg 36% 72%) 51%,
-      hsl(163deg 36% 73%) 56%,
-      hsl(157deg 34% 74%) 62%,
-      hsl(149deg 33% 76%) 67%,
-      hsl(141deg 31% 77%) 74%,
-      hsl(130deg 28% 78%) 80%,
-      hsl(116deg 27% 79%) 88%,
-      hsl(103deg 28% 79%) 100%
+      310deg,
+      hsl(193deg 47% 48%) 0%,
+      hsl(190deg 43% 51%) 5%,
+      hsl(187deg 42% 55%) 12%,
+      hsl(183deg 41% 59%) 21%,
+      hsl(178deg 41% 63%) 33%,
+      hsl(172deg 44% 68%) 47%,
+      hsl(166deg 49% 74%) 62%,
+      hsl(158deg 56% 80%) 78%,
+      hsl(149deg 67% 85%) 91%,
+      hsl(137deg 91% 91%) 100%
     );
+  }
+
+  button {
+    margin: 1rem 0rem;
+    align-self: flex-end;
+    border: none;
+    border-radius: 10px;
+    background-color: var(--color-utility-light);
+    i {
+      font-size: 1rem;
+      padding: 0.5rem 0.75rem;
+      background-color: var(--color-utility-dark);
+      color: var(--color-dark);
+    }
+    h3 {
+      margin: 0.35rem 0.85rem;
+      font-size: 0.75rem;
+      font-family: var(--font-branding);
+      font-weight: 500;
+      color: var(--color-dark);
+      text-transform: uppercase;
+      letter-spacing: 0.05rem;
+    }
   }
 
   button:hover {
     filter: drop-shadow(4px 4px 0px var(--color-dark));
     transform: translate(-2px, -2px);
   }
+
+  .hidden {
+    display: none;
+  }
 }
 
 body {
   padding: 6rem;
   div.container {
+    border-radius: 10px;
     filter: drop-shadow(4px 4px 8px var(--color-dark));
     width: 50%;
-    min-height: 80svh;
+    height: 80svh;
     padding: 2rem;
     header {
       height: 3rem;
@@ -128,39 +144,104 @@ body {
           color: var(--color-dark);
         }
       }
-      button#add-task {
-        border: none;
-        background-color: var(--color-utility-light);
-        i {
-          font-size: 1.25rem;
-          padding: 0.5rem 1rem;
-          background-color: var(--color-utility-dark);
-          color: var(--color-dark);
-        }
-        h3 {
-          margin: 0.5rem;
-          font-size: 1rem;
-          font-family: var(--font-branding);
-          font-weight: 500;
-          color: var(--color-dark);
-          text-transform: uppercase;
-          letter-spacing: 0.075rem;
-        }
-      }
     }
+
     hr {
       width: 80%;
       margin: 1.5rem auto;
       background-color: var(--color-dark);
       height: 0.125rem;
     }
-    main {
+
+    div#popup-modal {
+      height: 100%;
       width: 100%;
+      position: fixed;
+      inset: 0;
+      z-index: 9;
+      padding: 40px;
+      isolation: isolate;
+      div#modal-backdrop {
+        position: absolute;
+        z-index: -5;
+        height: 100%;
+        width: 100%;
+        inset: 0;
+        background-color: rgba($color: #2e4d37, $alpha: 0.5);
+        backdrop-filter: blur(6px);
+      }
+      form {
+        min-height: 30%;
+        width: 90%;
+        backdrop-filter: blur(20px);
+        border-radius: 10px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        i#modal-close-button {
+          font-size: 2rem;
+          text-align: end;
+          margin: 20px 20px 0px 0px;
+          color: #2e4d37;
+          cursor: pointer;
+        }
+
+        i#modal-close-button:hover {
+          filter: drop-shadow(4px 4px 2px var(--color-dark));
+          transform: translate(-2px, -2px);
+        }
+
+        h2,
+        label,
+        input,
+        textarea {
+          margin: 0.25rem 1rem;
+          padding: 0rem 0.5rem;
+        }
+
+        h2 {
+          text-align: center;
+          font-family: var(--font-subtitle);
+          font-weight: 400;
+        }
+
+        h2,
+        label {
+          font-family: var(--font-branding);
+          font-weight: 400;
+        }
+
+        textarea,
+        input {
+          font-family: var(--font-title);
+          padding: 0.75rem;
+          resize: none;
+        }
+
+        div.modal-button-container {
+          margin: 0.25rem 1rem;
+          justify-content: space-between;
+          h4 {
+            font-family: var(--font-subtitle);
+            font-weight: 400;
+            opacity: 0.25;
+          }
+        }
+
+        input#modal-task-title {
+          margin-bottom: 1rem;
+        }
+      }
+    }
+
+    main {
+      overflow: auto;
+      width: 100%;
+      scrollbar-width: thin;
+      // scrollbar-color: red yellow;
       ul.task-list {
         width: 100%;
         li.task-item {
-          width: 80%;
-          margin: 0 auto;
+          width: 90%;
+          margin: 1rem auto;
           padding: 0.75rem 1.5rem;
           div.task-title {
             justify-content: space-between;
@@ -171,37 +252,29 @@ body {
               align-self: flex-start;
             }
             h4 {
-              font-family: var(--font-branding);
-              font-weight: 400;
+              font-family: var(--font-subtitle);
+              font-weight: 200;
               opacity: 0.25;
             }
           }
           p {
-            font-family: var(--font-body);
-          }
-          button.mark-complete {
-            margin: 1rem 0rem;
-            align-self: flex-end;
-            border: none;
-            background-color: var(--color-utility-light);
-            i {
-              font-size: 1rem;
-              padding: 0.35rem 0.75rem;
-              background-color: var(--color-utility-dark);
-              color: var(--color-dark);
-            }
-            h3 {
-              margin: 0.35rem;
-              font-size: 0.75rem;
-              font-family: var(--font-branding);
-              font-weight: 400;
-              color: var(--color-dark);
-              text-transform: uppercase;
-              letter-spacing: 0.05rem;
-            }
+            font-family: var(--font-title);
+            font-weight: 300;
           }
         }
       }
+    }
+
+    main::-webkit-scrollbar {
+      width: 4px;
+    }
+
+    main::-webkit-scrollbar-thumb {
+      background-color: var(--color-utility-dark);
+    }
+
+    main::-webkit-scrollbar-track {
+      background-color: var(--color-dark);
     }
   }
 }
