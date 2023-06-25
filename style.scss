@@ -95,7 +95,7 @@
     background-color: var(--color-utility-light);
     i {
       font-size: 1rem;
-      padding: 0.5rem 0.75rem;
+      padding: 0.75rem 0.75rem;
       background-color: var(--color-utility-dark);
       color: var(--color-dark);
     }
@@ -271,8 +271,11 @@ body {
     background-color: var(--color-dark);
   }
 }
-
+// desktop
 @media screen and (min-width: 766px) {
+  .mobile {
+    display: none;
+  }
   body {
     padding: 6rem;
     div.container {
@@ -285,7 +288,41 @@ body {
   }
 }
 
+// mobile
 @media screen and (max-width: 765px) {
+  .desktop {
+    display: none;
+  }
+
+  body {
+    overflow: hidden;
+  }
+
+  header {
+    button {
+      margin: 1rem 0rem;
+      align-self: flex-end;
+      border: none;
+      border-radius: 10px;
+      background-color: var(--color-utility-light);
+      i {
+        font-size: 0.5rem;
+        padding: 0.5rem 0.5rem;
+        background-color: var(--color-utility-dark);
+        color: var(--color-dark);
+      }
+      h3 {
+        margin: 0.15rem 0.5rem;
+        font-size: 0.65rem;
+        font-family: var(--font-branding);
+        font-weight: 500;
+        color: var(--color-dark);
+        text-transform: uppercase;
+        letter-spacing: 0.05rem;
+      }
+    }
+  }
+
   body {
     height: 100vh;
     width: 100%;
