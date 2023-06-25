@@ -257,7 +257,7 @@ body main::-webkit-scrollbar-track {
     letter-spacing: 0.05rem;
   }
   body {
-    height: 100vh;
+    height: 100svh;
     width: 100%;
   }
   body div.container {
