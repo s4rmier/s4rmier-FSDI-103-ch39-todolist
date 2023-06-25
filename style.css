@@ -80,11 +80,12 @@ body {
 body div.container {
   border-radius: 10px;
   filter: drop-shadow(4px 4px 8px var(--color-dark));
-  width: 50%;
-  height: 80svh;
-  padding: 2rem;
+  min-width: 32rem;
+  height: 56rem;
+  padding: 1rem;
 }
 body div.container header {
+  margin: 1rem 0.25rem;
   height: 3rem;
   justify-content: space-between;
 }
@@ -102,7 +103,7 @@ body div.container header div.brand h1 {
 }
 body div.container hr {
   width: 80%;
-  margin: 1.5rem auto;
+  margin: 0 auto;
   background-color: var(--color-dark);
   height: 0.125rem;
 }
@@ -148,7 +149,7 @@ body div.container div#popup-modal form h2,
 body div.container div#popup-modal form label,
 body div.container div#popup-modal form input,
 body div.container div#popup-modal form textarea {
-  margin: 0.25rem 1rem;
+  margin: 0.15rem 1rem;
   padding: 0rem 0.5rem;
 }
 body div.container div#popup-modal form h2 {
@@ -164,7 +165,7 @@ body div.container div#popup-modal form label {
 body div.container div#popup-modal form textarea,
 body div.container div#popup-modal form input {
   font-family: var(--font-title);
-  padding: 0.75rem;
+  padding: 0.5rem 0.75rem;
   resize: none;
 }
 body div.container div#popup-modal form div.modal-button-container {
