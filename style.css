@@ -104,6 +104,7 @@ body div.container header div.brand h1 {
 body div.container hr {
   width: 80%;
   margin: 0 auto;
+  margin-bottom: 1rem;
   background-color: var(--color-dark);
   height: 0.125rem;
 }

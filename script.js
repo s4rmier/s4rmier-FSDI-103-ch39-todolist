@@ -70,12 +70,17 @@ modalTaskSubmit.addEventListener("click", () => {
     "modal-task-description"
   ).value;
 
+  if (newTaskTitle.trim() === "" || newTaskDescription.trim() === "") {
+    alert("Invalid input");
+    return;
+  }
+
   let newTaskItem = document.createElement("li");
   newTaskItem.classList.add("task-item", "card-bg", "flex-col", "justify");
   newTaskItem.innerHTML = `
   <div class="task-title flex-row align">
     <h3>
-      Task Title: <span>${newTaskTitle}</span>
+      ${newTaskTitle}
     </h3>
     <h4>
       Created: <span class="created-date">${getDate()}</span>
@@ -98,4 +103,9 @@ modalTaskSubmit.addEventListener("click", () => {
 
   clearInputFields();
   toggleVisibility(popUpModal);
+
+  let markCompleteButton = newTaskItem.querySelector(".mark-complete");
+  markCompleteButton.addEventListener("click", () => {
+    newTaskItem.classList.add("hidden");
+  });
 });
