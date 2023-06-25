@@ -121,162 +121,180 @@
 }
 
 body {
-  padding: 6rem;
-  div.container {
-    border-radius: 10px;
-    filter: drop-shadow(4px 4px 8px var(--color-dark));
-    min-width: 32rem;
-    height: 56rem;
-    padding: 1rem;
-    header {
-      margin: 1rem 0.25rem;
-      height: 3rem;
-      justify-content: space-between;
-      div.brand {
-        img {
-          width: 40px;
-          object-fit: cover;
-          margin: 20px;
-        }
-        h1 {
-          font-family: var(--font-branding);
-          font-size: 1.25rem;
-          font-weight: 400;
-          color: var(--color-dark);
-        }
+  header {
+    margin: 1rem 0.25rem;
+    height: 3rem;
+    justify-content: space-between;
+    div.brand {
+      img {
+        width: 40px;
+        object-fit: cover;
+        margin: 20px;
+      }
+      h1 {
+        font-family: var(--font-branding);
+        font-size: 1.25rem;
+        font-weight: 400;
+        color: var(--color-dark);
       }
     }
+  }
 
-    hr {
-      width: 80%;
-      margin: 0 auto;
-      margin-bottom: 1rem;
-      background-color: var(--color-dark);
-      height: 0.125rem;
-    }
+  hr {
+    width: 80%;
+    margin: 0 auto;
+    margin-bottom: 1rem;
+    background-color: var(--color-dark);
+    height: 0.125rem;
+  }
 
-    div#popup-modal {
+  div#popup-modal {
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    inset: 0;
+    z-index: 9;
+    padding: 40px;
+    isolation: isolate;
+    div#modal-backdrop {
+      position: absolute;
+      z-index: -5;
       height: 100%;
       width: 100%;
-      position: fixed;
       inset: 0;
-      z-index: 9;
-      padding: 40px;
-      isolation: isolate;
-      div#modal-backdrop {
-        position: absolute;
-        z-index: -5;
-        height: 100%;
-        width: 100%;
-        inset: 0;
-        background-color: rgba($color: #2e4d37, $alpha: 0.5);
-        backdrop-filter: blur(6px);
+      background-color: rgba($color: #2e4d37, $alpha: 0.5);
+      backdrop-filter: blur(6px);
+    }
+    form {
+      min-height: 30%;
+      width: 90%;
+      backdrop-filter: blur(20px);
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+      i#modal-close-button {
+        font-size: 2rem;
+        text-align: end;
+        margin: 20px 20px 0px 0px;
+        color: #2e4d37;
+        cursor: pointer;
       }
-      form {
-        min-height: 30%;
-        width: 90%;
-        backdrop-filter: blur(20px);
-        border-radius: 10px;
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-        i#modal-close-button {
-          font-size: 2rem;
-          text-align: end;
-          margin: 20px 20px 0px 0px;
-          color: #2e4d37;
-          cursor: pointer;
-        }
 
-        i#modal-close-button:hover {
-          filter: drop-shadow(4px 4px 2px var(--color-dark));
-          transform: translate(-2px, -2px);
-        }
+      i#modal-close-button:hover {
+        filter: drop-shadow(4px 4px 2px var(--color-dark));
+        transform: translate(-2px, -2px);
+      }
 
-        h2,
-        label,
-        input,
-        textarea {
-          margin: 0.15rem 1rem;
-          padding: 0rem 0.5rem;
-        }
+      h2,
+      label,
+      input,
+      textarea {
+        margin: 0.15rem 1rem;
+        padding: 0rem 0.5rem;
+      }
 
-        h2 {
-          text-align: center;
+      h2 {
+        text-align: center;
+        font-family: var(--font-subtitle);
+        font-weight: 400;
+      }
+
+      h2,
+      label {
+        font-family: var(--font-branding);
+        font-weight: 400;
+      }
+
+      textarea,
+      input {
+        font-family: var(--font-title);
+        padding: 0.5rem 0.75rem;
+        resize: none;
+      }
+
+      div.modal-button-container {
+        margin: 0.25rem 1rem;
+        justify-content: space-between;
+        h4 {
           font-family: var(--font-subtitle);
           font-weight: 400;
+          opacity: 0.25;
         }
+      }
 
-        h2,
-        label {
-          font-family: var(--font-branding);
-          font-weight: 400;
-        }
+      input#modal-task-title {
+        margin-bottom: 1rem;
+      }
+    }
+  }
 
-        textarea,
-        input {
-          font-family: var(--font-title);
-          padding: 0.5rem 0.75rem;
-          resize: none;
-        }
-
-        div.modal-button-container {
-          margin: 0.25rem 1rem;
+  main {
+    overflow: auto;
+    width: 100%;
+    scrollbar-width: thin;
+    ul.task-list {
+      width: 100%;
+      li.task-item {
+        width: 90%;
+        margin: 1rem auto;
+        padding: 0.75rem 1.5rem;
+        div.task-title {
           justify-content: space-between;
+          h3 {
+            margin: 0.825rem 0rem;
+            font-family: var(--font-branding);
+            font-weight: 400;
+            align-self: flex-start;
+          }
           h4 {
             font-family: var(--font-subtitle);
-            font-weight: 400;
+            font-weight: 200;
             opacity: 0.25;
           }
         }
-
-        input#modal-task-title {
-          margin-bottom: 1rem;
+        p {
+          font-family: var(--font-title);
+          font-weight: 300;
         }
       }
     }
+  }
 
-    main {
-      overflow: auto;
+  main::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  main::-webkit-scrollbar-thumb {
+    background-color: var(--color-utility-dark);
+  }
+
+  main::-webkit-scrollbar-track {
+    background-color: var(--color-dark);
+  }
+}
+
+@media screen and (min-width: 766px) {
+  body {
+    padding: 6rem;
+    div.container {
+      border-radius: 10px;
+      filter: drop-shadow(4px 4px 8px var(--color-dark));
+      min-width: 32rem;
+      height: 56rem;
+      padding: 1rem;
+    }
+  }
+}
+
+@media screen and (max-width: 765px) {
+  body {
+    height: 100vh;
+    width: 100%;
+    div.container {
+      border-radius: 10px;
+      filter: drop-shadow(4px 4px 8px var(--color-dark));
       width: 100%;
-      scrollbar-width: thin;
-      // scrollbar-color: red yellow;
-      ul.task-list {
-        width: 100%;
-        li.task-item {
-          width: 90%;
-          margin: 1rem auto;
-          padding: 0.75rem 1.5rem;
-          div.task-title {
-            justify-content: space-between;
-            h3 {
-              margin: 0.825rem 0rem;
-              font-family: var(--font-branding);
-              font-weight: 400;
-              align-self: flex-start;
-            }
-            h4 {
-              font-family: var(--font-subtitle);
-              font-weight: 200;
-              opacity: 0.25;
-            }
-          }
-          p {
-            font-family: var(--font-title);
-            font-weight: 300;
-          }
-        }
-      }
-    }
-
-    main::-webkit-scrollbar {
-      width: 4px;
-    }
-
-    main::-webkit-scrollbar-thumb {
-      background-color: var(--color-utility-dark);
-    }
-
-    main::-webkit-scrollbar-track {
-      background-color: var(--color-dark);
+      height: 100svh;
+      padding: 1rem;
     }
   }
 }
