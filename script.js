@@ -1,6 +1,5 @@
 // DOM Elements Selector
 const popUpModal = document.getElementById("popup-modal");
-const taskList = document.querySelectorAll(".task-item");
 const modalCloseButton = document.getElementById("modal-close-button");
 const createNewTask = document.getElementById("add-task");
 
@@ -12,6 +11,13 @@ createNewTask.addEventListener("click", () => {
 modalCloseButton.addEventListener("click", () => {
   clearInputFields();
   toggleVisibility(popUpModal);
+});
+
+document.addEventListener("keydown", function (event) {
+  if (event.key === "F3") {
+    clearInputFields();
+    toggleVisibility(popUpModal);
+  }
 });
 
 const toggleVisibility = (domElement) => {
@@ -55,22 +61,41 @@ let modalCreatedDate = (document.getElementById(
   "modal-created-date"
 ).textContent = getDate());
 
-{
-  /* <li class="task-item card-bg flex-col justify">
+let modalTaskSubmit = document.getElementById("modal-task-submit");
+
+modalTaskSubmit.addEventListener("click", () => {
+  let newTaskTitle = document.getElementById("modal-task-title").value;
+
+  let newTaskDescription = document.getElementById(
+    "modal-task-description"
+  ).value;
+
+  let newTaskItem = document.createElement("li");
+  newTaskItem.classList.add("task-item", "card-bg", "flex-col", "justify");
+  newTaskItem.innerHTML = `
   <div class="task-title flex-row align">
     <h3>
-      Task Title: <span>Title</span>
+      Task Title: <span>${newTaskTitle}</span>
     </h3>
     <h4>
-      Created: <span class="created-date">Jun 22, 2023</span>
+      Created: <span class="created-date">${getDate()}</span>
     </h4>
   </div>
   <p class="task-description">
-    Task Description: This is where the extra notes are!
+    ${newTaskDescription}
   </p>
   <button class="mark-complete flex-row align">
     <i class="fa-solid fa-check"></i>
     <h3>Mark Complete</h3>
-  </button>
-</li>; */
-}
+  </button>`;
+
+  let taskList = document.getElementById("task-list");
+  let allTasks = document.querySelectorAll(".task-item");
+
+  !allTasks.length
+    ? taskList.appendChild(newTaskItem)
+    : taskList.prepend(newTaskItem);
+
+  clearInputFields();
+  toggleVisibility(popUpModal);
+});
