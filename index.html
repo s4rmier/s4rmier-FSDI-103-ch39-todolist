@@ -36,10 +36,10 @@
 
           <h2>Create a new task</h2>
           <label>Task Title</label>
-          <input type="text" id="modal-task-title" placeholder="Enter task title">
+          <input type="text" id="modal-task-title" maxlength="18" placeholder="Enter task title">
 
           <label>Task Description</label>
-          <textarea id="modal-task-description" cols="30" rows="4" placeholder="Enter task description"></textarea>
+          <input id="modal-task-description" placeholder="Enter task description"></textarea>
 
           <div class="modal-button-container flex-row align">
             <h4>Created: <span id="modal-created-date"></span></h4>
@@ -53,6 +53,22 @@
       </div>
 
       <main class="flex-col align">
+
+        <section class="task-number align">
+          <figure class="flex-row align">
+            <i class="fa-solid fa-bars-progress"></i>
+            <figcaption>
+                <h3>Task Count: <span class="task-count"></span></h3>
+            </figcaption>
+          </figure>
+
+          <figure class="flex-row align">
+            <i class="fa-solid fa-list-check"></i>
+            <figcaption>
+                <h3>Completed: <span class="complete-count"></span></h3>
+            </figcaption>
+          </figure>
+        </section>
          
         <ul id="task-list" class="task-list flex-col">
           <!-- List Template -->
