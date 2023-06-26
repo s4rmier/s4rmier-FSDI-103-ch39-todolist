@@ -45,21 +45,21 @@
   background-image: linear-gradient(310deg, hsl(193, 47%, 48%) 0%, hsl(190, 43%, 51%) 5%, hsl(187, 42%, 55%) 12%, hsl(183, 41%, 59%) 21%, hsl(178, 41%, 63%) 33%, hsl(172, 44%, 68%) 47%, hsl(166, 49%, 74%) 62%, hsl(158, 56%, 80%) 78%, hsl(149, 67%, 85%) 91%, hsl(137, 91%, 91%) 100%);
 }
 * button {
-  margin: 1rem 0rem;
+  margin: 1rem;
   align-self: flex-end;
   border: none;
   border-radius: 10px;
   background-color: var(--color-utility-light);
 }
 * button i {
-  font-size: 1rem;
-  padding: 0.75rem 0.75rem;
+  font-size: 0.75rem;
+  padding: 0.5rem 0.75rem;
   background-color: var(--color-utility-dark);
   color: var(--color-dark);
 }
 * button h3 {
-  margin: 0.35rem 0.85rem;
-  font-size: 0.75rem;
+  margin: 0.35rem 0.75rem;
+  font-size: 0.7rem;
   font-family: var(--font-branding);
   font-weight: 500;
   color: var(--color-dark);
@@ -164,6 +164,7 @@ body div#popup-modal form div.modal-button-container {
   justify-content: space-between;
 }
 body div#popup-modal form div.modal-button-container h4 {
+  font-size: 0.5rem;
   font-family: var(--font-subtitle);
   font-weight: 400;
   opacity: 0.25;
@@ -172,11 +173,37 @@ body div#popup-modal form input#modal-task-title {
   margin-bottom: 1rem;
 }
 body main {
-  overflow: auto;
+  overflow-y: auto;
   width: 100%;
   scrollbar-width: thin;
 }
+body main section {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  text-transform: uppercase;
+}
+body main section figure {
+  font-family: var(--font-title);
+  padding: 0.25rem 1rem;
+  color: #2e4d37;
+}
+body main section figure i {
+  font-size: 1.25rem;
+  margin: 0rem 0.5rem;
+}
+body main section figure figcaption h3 {
+  font-family: var(--font-branding);
+  font-weight: 200;
+  font-size: 0.85rem;
+}
+body main section figure figcaption h3 span {
+  margin: 0rem 0.5rem;
+  font-family: var(--font-title);
+  font-weight: 800;
+}
 body main ul.task-list {
+  margin: 0;
   width: 100%;
 }
 body main ul.task-list li.task-item {
@@ -194,11 +221,13 @@ body main ul.task-list li.task-item div.task-title h3 {
   align-self: flex-start;
 }
 body main ul.task-list li.task-item div.task-title h4 {
+  font-size: 0.65rem;
   font-family: var(--font-subtitle);
   font-weight: 200;
-  opacity: 0.25;
+  opacity: 0.5;
 }
 body main ul.task-list li.task-item p {
+  word-wrap: break-word;
   font-family: var(--font-title);
   font-weight: 300;
 }
@@ -206,10 +235,10 @@ body main::-webkit-scrollbar {
   width: 4px;
 }
 body main::-webkit-scrollbar-thumb {
-  background-color: var(--color-utility-dark);
+  background-color: var(--color-dark);
 }
 body main::-webkit-scrollbar-track {
-  background-color: var(--color-dark);
+  background-color: var(--color-utility-dark);
 }
 
 @media screen and (min-width: 766px) {
@@ -220,6 +249,7 @@ body main::-webkit-scrollbar-track {
     padding: 6rem;
   }
   body div.container {
+    width: 50%;
     border-radius: 10px;
     filter: drop-shadow(4px 4px 8px var(--color-dark));
     min-width: 32rem;
@@ -231,23 +261,21 @@ body main::-webkit-scrollbar-track {
   .desktop {
     display: none;
   }
-  body {
-    overflow: hidden;
-  }
   header button {
     margin: 1rem 0rem;
   }
   header button i {
-    font-size: 0.5rem;
-    padding: 0.5rem 0.5rem;
+    font-size: 0.75rem;
+    padding: 0.5rem 0.75rem;
   }
   header button h3 {
-    margin: 0.15rem 0.5rem;
+    margin: 0.15rem 1rem;
     font-size: 0.65rem;
+    font-weight: 600;
   }
   body {
+    overflow: hidden;
     height: 100svh;
-    width: 100%;
   }
   body div.container {
     border-radius: 10px;
@@ -255,5 +283,23 @@ body main::-webkit-scrollbar-track {
     width: 100%;
     height: 100%;
     padding: 1rem;
+  }
+  button {
+    margin: 1rem 0rem;
+  }
+  button i {
+    font-size: 0.75rem;
+    padding: 0.35rem 0.5rem;
+    background-color: var(--color-utility-dark);
+    color: var(--color-dark);
+  }
+  button h3 {
+    margin: 0.15rem 0.5rem;
+    font-size: 0.65rem;
+    font-family: var(--font-branding);
+    font-weight: 500;
+    color: var(--color-dark);
+    text-transform: uppercase;
+    letter-spacing: 0.05rem;
   }
 }/*# sourceMappingURL=style.css.map */
