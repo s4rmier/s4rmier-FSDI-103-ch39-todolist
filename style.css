@@ -236,25 +236,14 @@ body main::-webkit-scrollbar-track {
   }
   header button {
     margin: 1rem 0rem;
-    align-self: flex-end;
-    border: none;
-    border-radius: 10px;
-    background-color: var(--color-utility-light);
   }
   header button i {
     font-size: 0.5rem;
     padding: 0.5rem 0.5rem;
-    background-color: var(--color-utility-dark);
-    color: var(--color-dark);
   }
   header button h3 {
     margin: 0.15rem 0.5rem;
     font-size: 0.65rem;
-    font-family: var(--font-branding);
-    font-weight: 500;
-    color: var(--color-dark);
-    text-transform: uppercase;
-    letter-spacing: 0.05rem;
   }
   body {
     height: 100svh;
